@@ -39,7 +39,7 @@ Este é um projeto de uma aplicação web para gerenciamento de tarefas desenvol
 
 ## Executando o Projeto
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
+1. Clone este repositório: `git clone https://github.com/Luizinho101/Gerenciamento_de_Tarefas.git
 2. Navegue até o diretório do projeto: `cd nome-do-repositorio`
 3. Abra a solução no Visual Studio.
 4. Certifique-se de ter um banco de dados SQL Server configurado e acessível.
