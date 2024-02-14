@@ -5,6 +5,8 @@ Este é um projeto de uma aplicação web para gerenciamento de tarefas desenvol
 ## Índeice
 - <a href="#funcionalidades">Funcionalidades
 
+- <a href="#status-do-projeto">Status do projeto
+
 - <a href="#requisitos-técnicos">Requisitos Técnicos
 
 - <a href="#requisitos-para-execução">Requisitos para Execução
@@ -22,6 +24,10 @@ Este é um projeto de uma aplicação web para gerenciamento de tarefas desenvol
 - [x] Listagem de Tarefas por Categoria: Visualize todas as tarefas associadas a uma categoria específica.
 - [x] Pesquisa de Tarefas: Encontre suas tarefas com facilidade através de uma funcionalidade de pesquisa.
 - [x] Interface de Usuário Intuitiva: Uma interface amigável e intuitiva para facilitar sua interação com a aplicação.
+
+## Status do projeto
+
+![myImage](https://img.shields.io/badge/Status-Em%20desenvolvimento-green)
 
 ## Requisitos Técnicos
 
@@ -52,5 +58,8 @@ Este é um projeto de uma aplicação web para gerenciamento de tarefas desenvol
 Este projeto está aberto a contribuições. Fique à vontade para reportar problemas, sugerir melhorias ou enviar pull requests.
 
 ## Licença
+![myImage](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)
 
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+
+
