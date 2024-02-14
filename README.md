@@ -58,8 +58,8 @@ Este é um projeto de uma aplicação web para gerenciamento de tarefas desenvol
 Este projeto está aberto a contribuições. Fique à vontade para reportar problemas, sugerir melhorias ou enviar pull requests.
 
 ## Licença
-![myImage](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)
+[![myImage](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)](https://github.com/Luizinho101/Gerenciamento_de_Tarefas/blob/main/LICENSE)
 
-Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+Este projeto está licenciado sob a [Licença MIT](https://github.com/Luizinho101/Gerenciamento_de_Tarefas/blob/main/LICENSE).
 
 
