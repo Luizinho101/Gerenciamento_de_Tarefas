@@ -14,5 +14,8 @@ namespace Gerenciamento_de_Tarefas.Models
         public DateTime DataCriacao { get; set; }
         public DateTime DataDeInicioDaTarefa { get; set; }
         public DateTime DataFimDaTarefa { get; set; }
+
+         public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

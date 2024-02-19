@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Gerenciamento_de_Tarefas.props" />
+</Project>
