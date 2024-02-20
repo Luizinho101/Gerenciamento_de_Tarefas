@@ -12,13 +12,25 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
     public IActionResult Index()
     {
         return View();
     }
 
     public IActionResult Privacy()
+    {
+        return View();
+    }
+    
+    public IActionResult Login()
+    {
+        return View();
+    }
+    public IActionResult Cadastro()
+    {
+        return View();
+    }
+    public IActionResult Gerenciamento_de_tarefas()
     {
         return View();
     }

@@ -18,8 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\luiza\Programacao\Estudos_Programacao\MeusProjetos\Gerenciamento_de_Tarefas
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/luiza/Programacao/Estudos_Programacao/MeusProjetos/Gerenciamento_de_Tarefas/Views/Home/cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjYWRhc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luiza/Programacao/Estudos_Programacao/MeusProjetos/Gerenciamento_de_Tarefas/Views/Home/gerenciamento_de_tarefas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxnZXJlbmNpYW1lbnRvX2RlX3RhcmVmYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/luiza/Programacao/Estudos_Programacao/MeusProjetos/Gerenciamento_de_Tarefas/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luiza/Programacao/Estudos_Programacao/MeusProjetos/Gerenciamento_de_Tarefas/Views/Home/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/luiza/Programacao/Estudos_Programacao/MeusProjetos/Gerenciamento_de_Tarefas/Views/Home/Privacy.cshtml]

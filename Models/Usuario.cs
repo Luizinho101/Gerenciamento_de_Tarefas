@@ -15,7 +15,7 @@ namespace Gerenciamento_de_Tarefas.Models
         public string DataDeNascimento { get; set; }
         public string Telefone {get; set;}
         public string Endereco { get; set; }
-        public string StatusCivil { get; set; }
+        public string EstadoCivil { get; set; }
 
         public ICollection<Tarefa> Tarefas { get; }
     }
