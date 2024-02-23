@@ -1,0 +1,23 @@
+@model IEnumerable<Gerenciamento_de_Tarefas.Models.Tarefa>
+
+@if(Model != null){
+         @foreach(var item in Model)
+        {
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(model => item.Titulo)</h5>
+                    <p class="card-text">@Html.DisplayFor(model => item.UsuarioId)</p>
+                    <p class="card-text">@Html.DisplayFor(model => item.Descricao)</p>
+                    <p class="card-text">@Html.DisplayFor(model => item.StatusDaTarefa)</p>
+                    <p class="card-text">@Html.DisplayFor(model => item.DataCriacao)</p>
+                    <p class="card-text">@Html.DisplayFor(model => item.DataDeInicioDaTarefa)</p>
+                    <p class="card-text">@Html.DisplayFor(model => item.DataFimDaTarefa)</p>
+                    <a href="gerenciamento_de_tarefas" class="btn btn-primary">Voltar</a>
+                </div>
+            </div>
+        }
+       }
+       else
+       {
+        <p>No data available</p>
+       }

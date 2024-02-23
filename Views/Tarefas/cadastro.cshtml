@@ -1,0 +1,50 @@
+@model Gerenciamento_de_Tarefas.Models.Usuario
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+
+
+<div class="p-3 mb-2 bg-primary text-white">
+<h1>Cadastro</h1>
+
+
+<form method="Post" asp-controller="Tarefas" asp-action="Cadastro">
+    <fieldset>
+        <legend>Cadastrar usuário</legend>
+        <div class="mb-3">
+            <label for="Nome" class="form-label">Nome</label>
+            <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Digite o seu Nome: ">
+        </div>
+        <div class="mb-3">
+            <label for="SobreNome" class="form-label">Sobrenome</label>
+            <input type="text" id="SobreNome" name="SobreNome" class="form-control" placeholder="Digite seu SobreNome: ">
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="text" id="Email" name="Email" class="form-control" placeholder="Digite o seu Email: ">
+        </div>
+        <div class="mb-3">
+            <label for="Senha" class="form-label">Senha</label>
+            <input type="text" id="Senha" name="Senha" class="form-control" placeholder="Digite sua Senha">
+        </div>
+        <div class="mb-3">
+            <label for="DataNascimento" class="form-label">Data de nascimento</label>
+            <input type="text" id="DataNascimento" name="DataNascimento" class="form-control" placeholder="Digite sua data de nascimento : ">
+        </div>
+        <div class="mb-3">
+            <label for="Telefone" class="form-label">Telefone</label>
+            <input type="text" id="Telefone" name="Telefone" class="form-control" placeholder="Digite seu Telefone: ">
+        </div>
+        <div class="mb-3">
+            <label for="Endereco" class="form-label">Endereco</label>
+            <input type="text" id="Endereco" name="Endereco" class="form-control" placeholder="Digite o seu Endereco: ">
+        </div>
+        <div class="mb-3">
+            <label for="EstadoCivil" class="form-label">Estado Civil</label>
+            <input type="text" id="EstadoCivil" name="EstadoCivil" class="form-control" placeholder="Digite o seu estado Civil: ">
+        </div>
+        <button type="submit" class="btn btn-primary">Criar usuário</button>
+    </fieldset>
+</form>

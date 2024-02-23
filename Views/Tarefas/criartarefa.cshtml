@@ -1,0 +1,37 @@
+@model Gerenciamento_de_Tarefas.Models.Tarefa
+
+<form method="Post" asp-controller="Tarefas" asp-action="Criartarefa">
+    <fieldset>
+        <legend>Criando nova tarefa</legend>
+        <div class="mb-3">
+            <label for="Titulo" class="form-label">Título</label>
+            <input type="text" id="Titulo" name="Titulo" class="form-control" placeholder="Digite o título da tarefa">
+        </div>
+        <div class="mb-3">
+            <label for="Descricao" class="form-label">Descrição</label>
+            <input type="text" id="Descricao" name="Descricao" class="form-control" placeholder="Digite a descrição da tarefa">
+        </div>
+        <div class="mb-3">
+            <label for="StatusDaTarefa" class="form-label">Status da tarefa</label>
+            <input type="text" id="StatusDaTarefa" name="StatusDaTarefa" class="form-control" placeholder="Digite o status da tarefa">
+        </div>
+        <div class="mb-3">
+            <label for="DataCriacao" class="form-label">Data da criação (aaaa-mm-dd hh:mm:ss)</label>
+            <input type="text" id="DataCriacao" name="DataCriacao" class="form-control" placeholder="Exemplo: 2024-02-18 00:00:00">
+        </div>
+        <div class="mb-3">
+            <label for="DataInicioDaTarefa" class="form-label">Data de início da tarefa (aaaa-mm-dd hh:mm:ss)</label>
+            <input type="text" id="DataInicioDaTarefa" name="DataInicioDaTarefa" class="form-control" placeholder="Exemplo: 2024-02-18 00:00:00">
+        </div>
+        <div class="mb-3">
+            <label for="DataFimDaTarefa" class="form-label">Data de fim da tarefa (aaaa-mm-dd hh:mm:ss)</label>
+            <input type="text" id="DataFimDaTarefa" name="DataFimDaTarefa" class="form-control" placeholder="Exemplo: 2024-02-18 00:00:00">
+        </div>
+        <div class="mb-3">
+            <label for="UsuarioId" class="form-label">ID do usuário</label>
+            <input type="number" id="UsuarioId" name="UsuarioId" class="form-control" placeholder="Digite o ID do usuário">
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar a tarefa</button>
+    </fieldset>
+</form>
+

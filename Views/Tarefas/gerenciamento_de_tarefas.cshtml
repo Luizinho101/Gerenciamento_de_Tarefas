@@ -1,0 +1,40 @@
+@model IEnumerable<Gerenciamento_de_Tarefas.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Gerenciamento de tarefas";
+}
+
+<h1>Gerenciamento de tarefas</h1>
+
+<br>
+<div class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <a href="criartarefa" class="btn btn-primary">Criar Nova tarefa</a>
+    </div>
+</div>
+    
+    <tbody>
+        
+       @if(Model != null){
+         @foreach(var item in Model)
+        {
+            <br>
+            <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(model => item.Titulo)</h5>
+                <p class="card-text">@Html.DisplayFor(model => item.Descricao)</p>
+                <a href="vertarefa" class="btn btn-primary">Ver tarefa</a>
+            </div>
+            </div>
+
+        }
+       }
+       else
+       {
+        <p>No data available</p>
+       }
+    </tbody>
+
+
