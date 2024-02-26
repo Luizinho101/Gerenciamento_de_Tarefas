@@ -13,6 +13,7 @@ namespace Gerenciamento_de_Tarefas.Controllers
     public class TarefasController : Controller
     {
         private readonly TarefasContext _context;
+        
 
         public TarefasController(TarefasContext context)
         {
@@ -28,6 +29,30 @@ namespace Gerenciamento_de_Tarefas.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Login(string nome) {
+
+             if (string.IsNullOrEmpty(nome))
+            {
+                ViewBag.Mensagem = "Por favor, forneça um nome.";
+                return View();
+            }
+
+            // Realize a consulta no banco de dados para verificar se o nome recebido no formulário existe
+            var pessoa = _context.Usuarios.FirstOrDefault(p => p.Nome == nome);
+
+            if (pessoa != null)
+            {
+                // Se encontrou uma pessoa com o nome fornecido, redirecione para outra página
+                return RedirectToAction("Gerenciamento_De_Tarefas", "Tarefas");
+            }
+            else
+            {
+                // Se não encontrou uma pessoa com o nome fornecido, retorne para a mesma view com uma mensagem de erro
+                ViewBag.Mensagem = "Nome não encontrado.";
+                return View();
+            }
         }
 
         public IActionResult Vertarefa()
@@ -71,6 +96,7 @@ namespace Gerenciamento_de_Tarefas.Controllers
         [HttpPost]
         public IActionResult Criartarefa(Tarefa tarefa)
         {
+            
            // if (ModelState.IsValid)
            // {
                 // Adiciona a nova tarefa ao contexto
