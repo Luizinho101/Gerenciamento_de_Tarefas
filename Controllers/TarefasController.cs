@@ -13,52 +13,77 @@ namespace Gerenciamento_de_Tarefas.Controllers
     public class TarefasController : Controller
     {
         private readonly TarefasContext _context;
+        private int idDoUsuario ;
         
 
         public TarefasController(TarefasContext context)
         {
             _context = context;
         }
-
-        public IActionResult Gerenciamento_De_Tarefas()
+      
+        public IActionResult Gerenciamento_De_Tarefas(int id)
         {
-            var tarefas = _context.Tarefas.ToList();
-            return View(tarefas);
+            var tarefas = _context.Tarefas.Where(t => t.UsuarioId == id).ToList();
+
+            return View(tarefas); 
         }
+       
+        
+       
+        
+       
 
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Login(string nome) {
+        public ActionResult Login(string Senha, string Email) {
 
-             if (string.IsNullOrEmpty(nome))
+
+            
+
+
+             if (string.IsNullOrEmpty(Senha))
             {
                 ViewBag.Mensagem = "Por favor, forneça um nome.";
                 return View();
             }
-
-            // Realize a consulta no banco de dados para verificar se o nome recebido no formulário existe
-            var pessoa = _context.Usuarios.FirstOrDefault(p => p.Nome == nome);
-
-            if (pessoa != null)
+            if (string.IsNullOrEmpty(Email))
             {
-                // Se encontrou uma pessoa com o nome fornecido, redirecione para outra página
-                return RedirectToAction("Gerenciamento_De_Tarefas", "Tarefas");
+                ViewBag.Mensagem = "Por favor, forneça um nome.";
+                return View();
+            }
+            
+            var senha = _context.Usuarios.FirstOrDefault(p => p.Senha == Senha);
+            var email = _context.Usuarios.FirstOrDefault(p => p.Email == Email);
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
+            if (usuario != null)
+            {
+               
+                return RedirectToAction("Gerenciamento_De_Tarefas", "Tarefas", new { id = usuario.Id });
             }
             else
             {
-                // Se não encontrou uma pessoa com o nome fornecido, retorne para a mesma view com uma mensagem de erro
-                ViewBag.Mensagem = "Nome não encontrado.";
+                ViewBag.Mensagem = "E-mail ou senha incorretos.";
                 return View();
             }
+
+            
         }
 
-        public IActionResult Vertarefa()
+        public IActionResult Vertarefa(int id)
         {
-            var tarefas = _context.Tarefas.ToList();
-            return View(tarefas);
+        
+            var tarefa = _context.Tarefas.FirstOrDefault(t => t.Id == id);
+
+            if (tarefa == null)
+            {
+                
+                return RedirectToAction("vertarefa", "Tarefas"); 
+            }
+
+            return View(tarefa);
         }
 
         public IActionResult Cadastro()
@@ -69,21 +94,18 @@ namespace Gerenciamento_de_Tarefas.Controllers
         [HttpPost]
         public IActionResult Cadastro(Usuario usuario)
         {
-            //if (ModelState.IsValid)
-            //{
-                // Verifica se o campo DataDeNascimento está preenchido
+          
                 if (usuario.DataDeNascimento == null)
                 {
-                    // Se não estiver preenchido, atribui a data atual como valor padrão
+                    
                     usuario.DataDeNascimento = "xxxxxxxxxxxxx";
                 }
 
-                // Adiciona o objeto Usuario ao contexto
+        
                 _context.Usuarios.Add(usuario);
-                // Salva as mudanças no banco de dados
+           
                 _context.SaveChanges();
-                //return RedirectToAction(nameof(Index));
-            //}
+              
             return View(usuario);
         }
 
@@ -97,17 +119,11 @@ namespace Gerenciamento_de_Tarefas.Controllers
         public IActionResult Criartarefa(Tarefa tarefa)
         {
             
-           // if (ModelState.IsValid)
-           // {
-                // Adiciona a nova tarefa ao contexto
                 _context.Tarefas.Add(tarefa);
-                // Salva as mudanças no banco de dados
                 _context.SaveChanges();
-                // Redireciona para a página de gerenciamento de tarefas
-                return RedirectToAction(nameof(Gerenciamento_De_Tarefas));
-          //  }
-            // Retorna a view com a tarefa em caso de falha na validação
-           // return View(tarefa);
+              
+                return RedirectToAction("Criartarefa", "Tarefas");
+           
         }
     }
 }
