@@ -21,12 +21,23 @@ namespace Gerenciamento_de_Tarefas.Controllers
             _context = context;
         }
       
-        public IActionResult Gerenciamento_De_Tarefas(int id)
+        
+        public IActionResult Gerenciamento_De_Tarefas(int? id)
         {
+            
+            if (id == null || TempData["IdRegistroSendoAlterado"] == null || 
+                id != (int)TempData["IdRegistroSendoAlterado"])
+            {
+                return BadRequest(); 
+            }
+
+          
             var tarefas = _context.Tarefas.Where(t => t.UsuarioId == id).ToList();
+             TempData["IdRegistroSendoAlterado"] = id; 
 
             return View(tarefas); 
         }
+
        
         
        
@@ -39,28 +50,19 @@ namespace Gerenciamento_de_Tarefas.Controllers
         }
         [HttpPost]
         public ActionResult Login(string Senha, string Email) {
-
-
-            
-
-
-             if (string.IsNullOrEmpty(Senha))
+            if (string.IsNullOrEmpty(Senha) || string.IsNullOrEmpty(Email))
             {
-                ViewBag.Mensagem = "Por favor, forneça um nome.";
-                return View();
-            }
-            if (string.IsNullOrEmpty(Email))
-            {
-                ViewBag.Mensagem = "Por favor, forneça um nome.";
+                ViewBag.Mensagem = "Por favor, forneça um e-mail e uma senha.";
                 return View();
             }
             
-            var senha = _context.Usuarios.FirstOrDefault(p => p.Senha == Senha);
-            var email = _context.Usuarios.FirstOrDefault(p => p.Email == Email);
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
+            
             if (usuario != null)
-            {
-               
+            { 
+              
+                TempData["IdRegistroSendoAlterado"] = usuario.Id;
+              
                 return RedirectToAction("Gerenciamento_De_Tarefas", "Tarefas", new { id = usuario.Id });
             }
             else
@@ -68,9 +70,8 @@ namespace Gerenciamento_de_Tarefas.Controllers
                 ViewBag.Mensagem = "E-mail ou senha incorretos.";
                 return View();
             }
-
-            
         }
+
 
         public IActionResult Vertarefa(int id)
         {
